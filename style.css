@@ -1,0 +1,248 @@
+/* Algemene instelling */
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
+}
+
+/* Algemene instelling Index & Expertise = in Grid! */
+
+.container {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 118px auto 1fr 118px;
+    grid-template-areas: 
+    "header"
+    "main_1"
+    "main_2"
+    "footer"
+}
+
+.container_ervaring {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 118px auto 118px;
+    grid-template-areas: 
+    "header"
+    "ervaring"
+    "footer"
+}
+
+/* Algemeen Header = in Grid! */
+
+header .navi {
+    grid-area: header;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li a {
+    float: center;
+    display: block;
+    padding: auto;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+li a.active {
+    background-color: rgb(10, 142, 250);;
+    color: white;
+  }
+
+li a:hover:not(.active) {
+    background-color: rgb(111, 113, 114);
+}
+
+/* Algemeen Footer = in Grid (bovenste code wordt overruled door code onderaan voor Contact) & Flex */
+
+footer {
+    background-color: #333;
+    text-align: left;
+    color: white;
+    font-size:10px;
+    text-align: center;
+    grid-area: footer;
+}
+
+#ARR {
+    font-style: oblique;
+    font-weight: bold;
+}
+
+footer a {
+    font-weight: bold;
+}
+
+/* Index Main_1 = in Grid! */
+
+main_1 {
+    border-color: black;
+    border-style:solid;
+    background-color: white;
+    grid-area: main_1;
+    margin:1%;
+    padding:1%
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%
+  }
+
+/* Index Main_2 = in Grid! */
+
+main_2 {
+    background-color: #e4e4e4;
+    font-size:14px;
+    grid-area: main_2;
+    margin:1%;
+    padding:1%
+}
+
+main_2 h1 p {
+    margin-left: 15%;
+}
+
+.ervaring {
+    background-color: #e4e4e4;
+    font-size:12px;
+    grid-area: ervaring;
+    margin:1%;
+    padding:1%
+}
+
+.ervaring h1 p {
+    margin-left: 15%;
+}
+
+#nummer{
+    font-weight: bold;
+    color:rgb(10, 142, 250)
+}
+
+/* Expertise Main_2 (gebruik maken van container grid) */
+
+.expertise h1, .opleiding h1 {
+    background-color: #333;
+    color: white;
+    padding:1rem
+}
+
+.expertise h2, .opleiding h2 {
+    border-bottom-style: dotted;
+    border-color: #333;
+    color:rgb(10, 142, 250)
+}
+
+/* Algemeen Contact */
+
+.contact_form {
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+/* Contact Header = in Flex!*/
+
+.navi_flex {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+.navi_flex a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    margin: 0;
+    background-color: #333;
+}
+
+/* Contact Form = in Flex!*/
+
+form {
+    margin: 5%;
+    font-size: small;
+}
+
+p label {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0.2%;
+    width:50%;
+}
+
+/* Contact Footer = in Flex!*/
+
+.contact_form footer{
+    height: 132px;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 1024px) {
+
+/* Algemene instelling Index & Expertise */
+
+.container  {
+    height:100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px auto 118px;
+    grid-template-areas: 
+    "header header"
+    "main_1 main_2"
+    "footer footer"
+}
+
+.container_ervaring  {
+    height:100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px auto 118px;
+    grid-template-areas: 
+    "header "
+    "ervaring"
+    "footer"
+}
+
+header {
+    grid-area: header;
+}
+
+li a {
+    float: left;
+}
+
+/* Instelling Expertise */
+
+img {
+    display: block;
+    width:100%;
+    margin-top: 25%;
+  }
+
+.ervaring {
+    font-size:14px;
+}
+
+/* Instelling Contact */
+
+form {
+    height:575px
+}
+
+.navi_flex {
+    display: flex;
+    background-color: #333;
+}
+
+}
